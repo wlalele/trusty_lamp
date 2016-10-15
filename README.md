@@ -23,9 +23,9 @@ Build image from Dockerfile
 ```
 docker build -t="trusty_lamp" .
 ```
-Run image with tcp 80 redirect
+Run image with tcp 80 redirect and directory sharing (default username is "dev")
 ```
-docker run -d -p 80:80 -i -t trusty_lamp
+docker run -d -p 80:80 -v $(pwd)/www:/home/${username}/www -i -t trusty_lamp
 ```
 You should see a container running when you type:
 ```
@@ -39,5 +39,4 @@ Once you access the container ssh, you can start all servers with a script locat
 ```
 ./start_servers
 ```
-Now you can access the webserver on a browser at http://localhost
-
+Now you can access the webserver on a browser at http://localhost and the www dir in the www dir of the project.

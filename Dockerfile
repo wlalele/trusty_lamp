@@ -36,8 +36,8 @@ RUN adduser ${username} sudo
 RUN su ${username}
 WORKDIR /home/${username}
 RUN mkdir www
-RUN ln -s /home/${username}/www /var/www/html/${username}
 RUN exit
+RUN ln -s /home/${username}/www /var/www/html/${username}
 
 # Install composer:
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
