@@ -7,40 +7,36 @@ Docker image that installs Ubuntu Trusty and a LAMP environment
 
 Setup
 -----
-1. Clone the repository
+
+Clone the repository
 ```
 git clone https://github.com/wlalele/trusty_lamp.git
 ```
-
-2. Change Directory
+Change Directory
 ```
 cd trusty_lamp
 ```
-
-3. Edit the Dockerfile (if you want/need) -
+Edit the Dockerfile (if you want/need) -
 _You can change the name of the non-root unix user that is going to be created and the root password for MySQL._
-
-4. Build image from Dockerfile
+Build image from Dockerfile
 ```
 docker build -t="trusty_lamp" .
 ```
-
-5. Run image with tcp 80 redirect
+Run image with tcp 80 redirect
 ```
 docker run -d -p 80:80 -i -t trusty_lamp
 ```
-
 You should see a container running when you type:
 ```
 docker ps
 ```
-
 To access the container ssh:
 ```
 docker attach {container_id / container_name}
 ```
-
-You can start all servers with a script located on the root dir
+Once you access the container ssh, you can start all servers with a script located on the root dir:
 ```
 ./start_servers
 ```
+Now you can access the webserver on a browser at http://localhost
+
