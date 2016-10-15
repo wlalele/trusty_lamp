@@ -18,6 +18,7 @@ cd trusty_lamp
 ```
 Edit the Dockerfile (if you want/need) -
 _You can change the name of the non-root unix user that is going to be created and the root password for MySQL._
+
 Build image from Dockerfile
 ```
 docker build -t="trusty_lamp" .
